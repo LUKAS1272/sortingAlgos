@@ -20,9 +20,10 @@ int main() {
 
     int index = 1;
     while (arrLen > 0) {
+        // printf("%d\n", index);
         if (index == arrLen) {
             break;
-        } else if (numArr[index - 1] < numArr[index]) {
+        } else if (numArr[index - 1] <= numArr[index]) {
             index++;
         } else { // Zjisti s cim swapnout
             int subIndex = index - 1;
@@ -44,6 +45,8 @@ int main() {
             }
         }
     }
+
+    printf("----------\n");
 
     for (int i = 0; i < arrLen; i++) { printf("%d\n", numArr[i]); } // Writes out sorted array
     free(numArr); // Frees dynamic array
