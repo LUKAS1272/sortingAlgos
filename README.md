@@ -8,6 +8,14 @@
 **Time Complexity**: O(n²) (average and worst)  
 **In-Place?**: Yes (no extra array needed)
 
+**Positives**:
+- Simple to understand and implement.
+- Useful for small datasets or teaching purposes.
+
+**Negatives**:
+- Extremely inefficient for large datasets.
+- Performs unnecessary comparisons even when the list is nearly sorted.
+
 ---
 
 ## Insertion Sort
@@ -18,6 +26,14 @@
 
 **Time Complexity**: O(n²) (average and worst)  
 **In-Place?**: Yes (no extra array needed)
+
+**Positives**:
+- Efficient for small or nearly sorted datasets.
+- Easy to implement and understand.
+
+**Negatives**:
+- Poor performance on large datasets.
+- Comparisons increase significantly with unsorted inputs.
 
 ---
 
@@ -30,6 +46,14 @@
 **Time Complexity**: O(n²) (average and worst)  
 **In-Place?**: Yes (no extra array needed)
 
+**Positives**:
+- Minimal memory usage.
+- Performs fewer swaps compared to Bubble Sort.
+
+**Negatives**:
+- Inefficient for large datasets.
+- Always performs O(n²) comparisons regardless of input order.
+
 ---
 
 ## Quick Sort
@@ -40,6 +64,14 @@
 
 **Time Complexity**: O(n log n) on average, O(n²) in the worst case  
 **In-Place?**: Yes (no extra array needed, but uses recursion stack)
+
+**Positives**:
+- Very efficient for large datasets.
+- Performs well on average with a good pivot selection strategy.
+
+**Negatives**:
+- Performance can degrade to O(n²) with poor pivot selection.
+- Requires additional stack space due to recursion.
 
 ---
 
@@ -52,6 +84,14 @@
 **Time Complexity**: O(n log n) (average and worst)  
 **In-Place?**: No (requires extra arrays during merging)
 
+**Positives**:
+- Guarantees O(n log n) performance.
+- Stable sorting algorithm (preserves the order of equal elements).
+
+**Negatives**:
+- Requires additional memory for merging.
+- Slower compared to Quick Sort in practical scenarios due to memory overhead.
+
 ---
 
 ## Heap Sort
@@ -62,3 +102,30 @@
 
 **Time Complexity**: O(n log n) (average and worst)  
 **In-Place?**: Yes (no extra array needed aside from the heap structure in-place)
+
+**Positives**:
+- Consistent O(n log n) performance.
+- Does not require additional memory.
+
+**Negatives**:
+- Not stable (does not preserve the order of equal elements).
+- Slower than Quick Sort for practical datasets.
+
+---
+
+## Radix Sort
+1. **Determine** the number of digits (d) of the largest element in the list.  
+2. **Iterate** through each digit position starting from the least significant digit (LSD) to the most significant digit (MSD).  
+3. **Sort** the list at each digit position using a **stable** sorting method (often Counting Sort).  
+4. **Repeat** for the next digit position until all digit positions have been processed.  
+
+**Time Complexity**: O(n * d), where d is the number of digits. In practical terms, often approximated as O(n log n) if d is proportional to log of the maximum value. 
+**In-Place?**: No (requires additional data structures, such as the array used in each Counting Sort step)
+
+**Positives**:
+- Very efficient for large datasets with small digit ranges.
+- Performance is not dependent on comparisons, making it faster for specific inputs.
+
+**Negatives**:
+- Requires additional memory for intermediate sorting.
+- Limited to integer or fixed-format data (e.g., strings of equal length).
